@@ -1,0 +1,23 @@
+{
+  "name": "cse341",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrissoares26/CSE341.git"
+  },
+  "author": "Chris Soares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrissoares26/CSE341/issues"
+  },
+  "homepage": "https://github.com/chrissoares26/CSE341#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
