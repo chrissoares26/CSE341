@@ -3,6 +3,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express =  require('express');
 
+const port = process.env.PORT || 5000
+
 const router = express.Router();
 
 const app = express();
@@ -25,4 +27,4 @@ app.use((req, res, next) => {
   });
 
 
-app.listen(3000);
+app.listen(port);
