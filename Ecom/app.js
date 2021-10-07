@@ -7,9 +7,9 @@ const mongoose = require('mongoose');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const port = process.env.PORT || 5000
-
 const app = express();
+
+const PORT =process.env.PORT || 5000
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -51,7 +51,7 @@ mongoose
         user.save();
       }
     });
-    app.listen(port);
+    app.listen(PORT);
   })
   .catch(err => {
     console.log(err);
