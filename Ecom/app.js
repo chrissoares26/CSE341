@@ -19,7 +19,7 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptions));
+
 
 const options = {
   useUnifiedTopology: true,
@@ -38,6 +38,8 @@ const store = new MongoDBStore({
   collection: 'sessions'
 });
 const csrfProtection = csrf();
+
+app.use(cors(corsOptions));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
