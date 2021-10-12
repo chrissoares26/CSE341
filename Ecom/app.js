@@ -7,11 +7,28 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
+const cors = require('cors');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 const PORT = process.env.PORT || 5000;
+
+const corsOptions = {
+  origin: "https://soarescse341.herokuapp.com/",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
+};
+
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://chrissoares26:<password>@cluster0.nyjuj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" ;
 
 const MONGODB_URI =
   'mongodb+srv://chrissoares26:password123_@cluster0.nyjuj.mongodb.net/shop';
