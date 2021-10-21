@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Product = require('../models/product');
 
 const Schema = mongoose.Schema;
 
@@ -61,6 +62,15 @@ userSchema.methods.removeFromCart = function(productId) {
 userSchema.methods.clearCart = function() {
   this.cart = { items: [] };
   return this.save();
+};
+
+userSchema.methods.getQuantity = function(productId) {
+  this.cart.items.forEach(i => {
+    if (i.productId == productId) {
+      return i.quantity
+    };
+    
+  });
 };
 
 module.exports = mongoose.model('User', userSchema);

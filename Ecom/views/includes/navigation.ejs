@@ -26,6 +26,9 @@
                 </li>
             <% } %>
         </ul>
+        <% if (!isAuthenticated) { %>
+            <%- include('../includes/login-message.ejs') %>
+        <% } %>
         <ul class="main-header__item-list">
             <% if (!isAuthenticated) { %>
                 <li class="main-header__item">

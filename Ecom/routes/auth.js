@@ -19,7 +19,6 @@ router.post(
       .normalizeEmail(),
     body('password', 'Password has to be valid.')
       .isLength({ min: 5 })
-      .isAlphanumeric()
       .trim()
   ],
   authController.postLogin
@@ -50,7 +49,6 @@ router.post(
       'Please enter a password with only numbers and text and at least 5 characters.'
     )
       .isLength({ min: 5 })
-      .isAlphanumeric()
       .trim(),
     body('confirmPassword')
       .trim()

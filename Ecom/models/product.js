@@ -11,6 +11,10 @@ const productSchema = new Schema({
     type: Number,
     required: true
   },
+  stock: {
+    type: Number,
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -26,6 +30,20 @@ const productSchema = new Schema({
   }
 });
 
+productSchema.methods.addStock = function(num = 1) {
+  const newNumber = parseInt(num)
+  this.stock += newNumber;
+  return this.save();
+
+};
+
+productSchema.methods.removeStock = function(num = 1) {
+  this.stock -= num;
+  if (this.stock < 0) {
+    this.stock = 0;
+  }
+  return this.save();
+};
 module.exports = mongoose.model('Product', productSchema);
 
 // const mongodb = require('mongodb');

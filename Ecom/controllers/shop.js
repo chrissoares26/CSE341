@@ -1,5 +1,6 @@
 const Product = require('../models/product');
 const Order = require('../models/order');
+const user = require('../models/user');
 
 exports.getProducts = (req, res, next) => {
   Product.find()
@@ -46,7 +47,7 @@ exports.getIndex = (req, res, next) => {
 exports.getCart = (req, res, next) => {
   req.user
     .populate('cart.items.productId')
-    .execPopulate()
+    // .execPopulate()
     .then(user => {
       const products = user.cart.items;
       res.render('shop/cart', {
@@ -60,9 +61,11 @@ exports.getCart = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
+
   Product.findById(prodId)
     .then(product => {
-      return req.user.addToCart(product);
+     req.user.addToCart(product);
+     product.removeStock()
     })
     .then(result => {
       console.log(result);
@@ -72,8 +75,14 @@ exports.postCart = (req, res, next) => {
 
 exports.postCartDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
-  req.user
-    .removeFromCart(prodId)
+  const quant =  req.body.quantity;
+  Product.findById(prodId)
+    .then(product => { 
+     req.user.removeFromCart(prodId);
+     product.addStock(quant);
+     console.log(quant + 'HELP');
+     
+    })
     .then(result => {
       res.redirect('/cart');
     })
@@ -83,7 +92,7 @@ exports.postCartDeleteProduct = (req, res, next) => {
 exports.postOrder = (req, res, next) => {
   req.user
     .populate('cart.items.productId')
-    .execPopulate()
+    // .execPopulate()
     .then(user => {
       const products = user.cart.items.map(i => {
         return { quantity: i.quantity, product: { ...i.productId._doc } };
