@@ -17,7 +17,7 @@
                                     </h1>
                                 </header>
                                 <div class="card__image">
-                                    <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                                    <img src="/<%= product.imageUrl %>" alt="<%= product.title %>">
                                 </div>
                                 <div class="card__content">
                                     <h2 class="product__price">$
@@ -47,6 +47,21 @@
                             </article>
                             <% } %>
                     </div>
+                    <section class="pagination"> 
+                        <% if (currentPage !== 1 && previousPage !== 1) { %>
+                            <a href="/products/?page=1">1</a> 
+                        <% } %>
+                        <% if (hasPreviousPage) { %> 
+                            <a href="/products/?page=<%= previousPage %>"><%= previousPage %></a>
+                        <% } %>
+                        <a href="/products/?page=<%= currentPage %>" class="active"><%= currentPage %></a>
+                        <% if (hasNextPage) { %> 
+                            <a href="/products/?page=<%= nextPage %>"><%= nextPage %></a>
+                        <% } %>
+                        <% if (lastPage !== currentPage && nextPage !== lastPage) { %>
+                            <a href="/products/?page=<%= lastPage %>" class="active"><%= lastPage %></a>
+                        <% } %>
+                    </section>
                     <% } else { %>
                         <h1>No Products Found!</h1>
                         <% } %>

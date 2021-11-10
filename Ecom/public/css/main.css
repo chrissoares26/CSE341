@@ -333,6 +333,26 @@ nav.fill ul li a:hover:after {
   color: red;
 }
 
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #1f1f1f;
+  padding: 0.5rem;
+  border: 1px solid #1f1f1f;
+  margin: 0 1rem;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: #1f1f1f;
+  color: whitesmoke;
+}
+
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
