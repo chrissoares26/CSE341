@@ -13,7 +13,7 @@ const multer = require('multer');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
   origin: "https://soarescse341.herokuapp.com/",
