@@ -28,10 +28,12 @@ const options = {
   family: 4
 };
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://chrissoares26:password123_@cluster0.nyjuj.mongodb.net/shop?retryWrites=true&w=majority" ;
+const MONGODB_URL =
+  process.env.MONGODB_URL ||
+  "mongodb+srv://chrissoares26:password123_@cluster0.12eur.mongodb.net/shop?retryWrites=true&w=majority";
 
 const MONGODB_URI =
-  'mongodb+srv://chrissoares26:password123_@cluster0.nyjuj.mongodb.net/shop';
+  "mongodb+srv://chrissoares26:password123_@cluster0.12eur.mongodb.net/shop";
 
 const app = express();
 const store = new MongoDBStore({
