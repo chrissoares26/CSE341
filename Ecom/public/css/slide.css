@@ -11,6 +11,8 @@ body {
 
 img {
   vertical-align: middle;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
 /* Slideshow container */
@@ -22,14 +24,14 @@ img {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: #28d56e;
   font-size: 15px;
   padding: 20px 15px;
   position: absolute;
   right: 10px;
   bottom: 10px;
   width: 40%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(05, 43, 55, 0.8);
   text-align: left;
 }
 
@@ -39,7 +41,7 @@ img {
   width: 15px;
   margin: 0 2px;
   background-color: transparent;
-  border-color: #ddd;
+  border-color: #7cc4da;
   border-width: 5 px;
   border-style: solid;
   border-radius: 50%;
@@ -48,7 +50,7 @@ img {
 }
 
 .active {
-  border-color: #666;
+  border-color: #052b37;
 }
 
 /* Animation */

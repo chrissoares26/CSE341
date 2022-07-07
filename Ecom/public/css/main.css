@@ -8,6 +8,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  color: #052b37;
+  background-color: #dfe6e8;
 }
 
 main {
@@ -112,7 +114,7 @@ nav.fill ul li a:hover:after {
 .main-header {
   width: 100%;
   height: 3.5rem;
-  background-color: #1b1f1e;
+  background-color: #052b37;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -144,7 +146,7 @@ nav.fill ul li a:hover:after {
   background: transparent;
   border: none;
   text-decoration: none;
-  color: white;
+  color: #dfe6e8;
   cursor: pointer;
 }
 
@@ -153,7 +155,7 @@ nav.fill ul li a:hover:after {
 .main-header__item a.active,
 .main-header__item button:hover,
 .main-header__item button:active {
-  color: #ffeb3b;
+  color: #28d56e;
 }
 
 .mobile-nav {
@@ -163,7 +165,7 @@ nav.fill ul li a:hover:after {
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+  background: #dfe6e8;
   z-index: 10;
   padding: 2rem 1rem 1rem 2rem;
   transform: translateX(-100%);
@@ -191,7 +193,7 @@ nav.fill ul li a:hover:after {
 .mobile-nav__item button {
   font: inherit;
   text-decoration: none;
-  color: black;
+  color: #052b37;
   font-size: 1.5rem;
   padding: 0.5rem 2rem;
   background: transparent;
@@ -204,18 +206,18 @@ nav.fill ul li a:hover:after {
 .mobile-nav__item a.active,
 .mobile-nav__item button:hover,
 .mobile-nav__item button:active {
-  background: #1b1f1e;
-  color: white;
+  background: #052b37;
+  color: #28d56e;
   border-radius: 3px;
 }
 
 #side-menu-toggle {
-  border: 1px solid white;
+  border: 1px solid #dfe6e8;
   font: inherit;
   padding: 0.5rem;
   display: block;
   background: transparent;
-  color: white;
+  color: #dfe6e8;
   cursor: pointer;
 }
 
@@ -225,8 +227,8 @@ nav.fill ul li a:hover:after {
 
 #side-menu-toggle:active,
 #side-menu-toggle:hover {
-  color: #ffeb3b;
-  border-color: #ffeb3b;
+  color: #28d56e;
+  border-color: #28d56e;
 }
 
 .welcome {
@@ -293,17 +295,17 @@ nav.fill ul li a:hover:after {
   padding: 0.25rem 1rem;
   text-decoration: none;
   font: inherit;
-  border: 1px solid #1b1f1e;
-  color: #1b1f1e;
-  background: white;
+  border: 1px solid #052b37;
+  color: #052b37;
+  background: #dfe6e8;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #1b1f1e;
-  color: white;
+  background-color: #052b37;
+  color: #28d56e;
 }
 
 .btn.danger {
@@ -340,17 +342,17 @@ nav.fill ul li a:hover:after {
 
 .pagination a {
   text-decoration: none;
-  color: #1f1f1f;
+  color: #052b37;
   padding: 0.5rem;
-  border: 1px solid #1f1f1f;
+  border: 1px solid #052b37;
   margin: 0 1rem;
 }
 
 .pagination a:hover,
 .pagination a:active,
 .pagination a.active {
-  background: #1f1f1f;
-  color: whitesmoke;
+  background: #052b37;
+  color: #28d56e;
 }
 
 @media (min-width: 768px) {

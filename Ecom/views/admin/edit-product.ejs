@@ -57,6 +57,61 @@
                     value="<% if (editing || hasError) { %><%= product.stock %><% } %>">
             </div>
             <div class="form-control">
+                <label for="type">Type</label>
+                <select class="<%= validationErrors.find(e => e.param === 'type') ? 'invalid' : '' %>" id="type" name="type">
+                   <option value="Indoor">Indoor</option>
+                   <option value="Grass">Grass</option>
+                   <option value="Turf">Turf</option> 
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="gender">Gender</label>
+                <select class="<%= validationErrors.find(e => e.param === 'gender') ? 'invalid' : '' %>" id="gender" name="gender">
+                   <option value="Male">Male</option>
+                   <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="age">Age</label>
+                <select class="<%= validationErrors.find(e => e.param === 'age') ? 'invalid' : '' %>" id="age" name="age">
+                   <option value="Children">Children</option>
+                   <option value="Adult">Adult</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="size">Size</label>
+                <select class="<%= validationErrors.find(e => e.param === 'size') ? 'invalid' : '' %>" id="size" name="size" multiple>
+                   <option value="34">34</option>
+                   <option value="35">35</option>
+                   <option value="36">36</option>
+                   <option value="37">37</option> 
+                   <option value="38">38</option> 
+                   <option value="39">39</option> 
+                   <option value="40">40</option> 
+                   <option value="41">41</option> 
+                   <option value="42">42</option> 
+                   <option value="43">43</option> 
+                   <option value="44">44</option> 
+                   <option value="45">45</option> 
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="color">Color</label>
+                <select class="<%= validationErrors.find(e => e.param === 'color') ? 'invalid' : '' %>" id="color" name="color" multiple>
+                   <option value="Primary">Primary</option>
+                   <option value="Secondary">Secondary</option>
+                   
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="material">Material</label>
+                <select class="<%= validationErrors.find(e => e.param === 'material') ? 'invalid' : '' %>" id="material" name="material">
+                   <option value="Leather">Leather</option>
+                   <option value="Plastic">Plastic</option>
+                   
+                </select>
+            </div>
+            <div class="form-control">
                 <label for="description">Description.</label>
                 <textarea
                     class="<%= validationErrors.find(e => e.param === 'description') ? 'invalid' : '' %>"

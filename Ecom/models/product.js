@@ -1,50 +1,73 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   stock: {
     type: Number,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   imageUrl: {
     type: String,
-    required: true
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  gender: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: String,
+    required: true,
+  },
+  size: {
+    type: [Number],
+    required: true,
+  },
+  color: {
+    type: [String],
+    required: true,
+  },
+  material: {
+    type: String,
+    required: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  }
+    ref: "User",
+    required: true,
+  },
 });
 
-productSchema.methods.addStock = function(num = 1) {
-  const newNumber = parseInt(num)
+productSchema.methods.addStock = function (num = 1) {
+  const newNumber = parseInt(num);
   this.stock += newNumber;
   return this.save();
-
 };
 
-productSchema.methods.removeStock = function(num = 1) {
+productSchema.methods.removeStock = function (num = 1) {
   this.stock -= num;
   if (this.stock < 0) {
     this.stock = 0;
   }
   return this.save();
 };
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema);
 
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;

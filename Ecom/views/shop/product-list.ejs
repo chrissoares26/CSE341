@@ -1,13 +1,14 @@
 <%- include('../includes/head.ejs') %>
     <link rel="stylesheet" href="/css/product.css">
+
     </head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
-
+        
             <main>
-                
                 <% if (prods.length > 0) { %>
+                    <button type="button" class="btn">Filter</button>
                     <div class="grid">
                         <% for (let product of prods) { %>
                             <article class="card product-item">
@@ -29,6 +30,21 @@
                                     <p class="product__description">
                                         <%= product.stock %>
                                     </p>
+                                    <div class="product__description"><label for="size">Size</label>
+                                        <select id="size" name="size" >
+                                          <% for (var i = 0; i < product.size.length; i++) { %>
+                                          <option value="<%= product.size[i] %>""><%= product.size[i] %></option>
+                                          <% } %>
+                                        </select></div>
+                                        <div class="product__description"><label for="color">Color</label>
+                                            <select id="color" name="color" >
+                                              <% for (var i = 0; i < product.color.length; i++) { %>
+                                              <option value="<%= product.color[i] %>""><%= product.color[i] %></option>
+                                              <% } %>
+                                            </select></div>
+                                    
+  
+                                    
                                     <% if (product.stock > 0) { %>
                                         <p class="product__stock__available">Available</p>
 
